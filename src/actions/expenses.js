@@ -1,11 +1,6 @@
 import database from '../firebase/firebase';
 
 
-// ADD_EXPENSE
-export const addExpense = (expense) => ({
-    type: 'ADD_EXPENSE',
-    expense
-});
 // REMOVE_EXPENSE 
 export const removeExpense = ({ id } = {}) => ({
     type: 'REMOVE_EXPENSE',
@@ -26,6 +21,19 @@ export const editExpense = (id, updates) => ({
     updates
 });
 
+export const startEditExpense = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).update(updates).then(() => {
+            dispatch(editExpense(id, updates));
+        });
+    };
+};
+
+// ADD_EXPENSE
+export const addExpense = (expense) => ({
+    type: 'ADD_EXPENSE',
+    expense
+});
 //only works with Redux middleware. redux only returns objects on its own
 export const startAddExpense = (expenseData = {}) => {
     return (dispatch) => {
@@ -53,7 +61,7 @@ export const setExpenses = (expenses) => ({
 
 export const startSetExpenses = () => {
     return (dispatch) => {
-      return  database.ref('expenses')
+      return database.ref('expenses')
             .once('value').then((snapshot) => {
                 const expenses = [];
                 snapshot.forEach((childSnapshot) => {

@@ -62,7 +62,7 @@ test('should add an expense', () => {
     expect(state).toEqual([...expenses, expense]);
 });
 
-test('should set expenses', ()=> {
+test('should set expenses', () => {
     const action = {
         type: 'SET_EXPENSES',
         expenses:[expenses[1]]

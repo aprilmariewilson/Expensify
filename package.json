@@ -2,7 +2,7 @@
   "name": "indecision-app",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Andrew Mead",
+  "author": "April Wilson",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack",
@@ -39,6 +39,7 @@
     "redux": "3.7.2",
     "redux-mock-store": "1.2.3",
     "redux-thunk": "2.2.0",
+    "request": "^2.88.0",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
     "uuid": "3.1.0",
