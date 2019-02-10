@@ -33,6 +33,7 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(login(user.uid));
         store.dispatch(startSetExpenses()).then(() => {
             renderApp();
+            console.log('logged in');
             if(history.location.pathname === '/'){
                 history.push('/dashboard');
             };
@@ -40,6 +41,7 @@ firebase.auth().onAuthStateChanged((user) => {
         
     } else {
         store.dispatch(logout());
+        console.log('logged out')
       renderApp();
       history.push('/');
     };
