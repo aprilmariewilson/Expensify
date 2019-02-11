@@ -1,0 +1,27 @@
+.login__button {
+    background: $blue;
+    font: url(/fonts/ProductSans-Regular.ttf);
+    border: $blue;
+    font-size: 2.2rem;
+    color: white;
+    font-weight: 300; 
+    padding: $m-size $s-size;
+} 
+.button {
+    background: $blue;
+    border: none;
+    display: inline-block;
+    font-size: $lg-font;
+    color: white;
+    line-height: 1;
+    padding: $s-size;
+    text-decoration: none;
+}
+.button__logout {
+    background: $dark-blue;
+    color: white;
+    font-weight: 400;
+}
+.button__remove {
+    background: #888;
+}
